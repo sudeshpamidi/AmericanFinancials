@@ -21,6 +21,13 @@ window.onload = function() {
         let term = numyears.value * 12
         let apr = interestrate.value / 1200;
 
+        if (isNaN(diposit) || isNaN(term) || isNaN(apr)) {
+
+            results.style.display = "block";
+            results.innerHTML = "<p class='error'>One or more input fields are not number(s).</p>";
+            return;
+        }
+
         let futureamount = calculatefuturevalue(diposit, term, apr);
         let totalearned = futureamount - diposit;
 

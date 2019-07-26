@@ -17,11 +17,22 @@ window.onload = function() {
     //Calculate button event
     calculate.onclick = function() {
 
-        let amount = principalamt.value;
+        let amount = Number(principalamt.value);
         let term = loanlength.value * 12;
         let apr = interestrate.value / 1200;
 
+        if (isNaN(amount) || isNaN(term) || isNaN(apr)) {
+            results.style.display = "block";
+            results.innerHTML = "<p class='error'>One or more input fields are not number(s).</p>";
+            return;
+        }
+
+
         let mpayment = calculatepayment(amount, term, apr);
+
+        if (isNaN(mpayment))
+            mpayment = 0;
+
         let totalamount = mpayment * term
 
         results.style.display = "block";

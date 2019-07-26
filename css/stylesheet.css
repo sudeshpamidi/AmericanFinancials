@@ -1,4 +1,9 @@
 .jumbotron {
+    background-image: url(../img/consulting.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    color: white;
     text-align: center;
 }
 
@@ -21,4 +26,13 @@ footer {
     margin: 15px 0 0;
     padding: 25px;
     display: none;
+}
+
+.error {
+    color: red;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
 }
