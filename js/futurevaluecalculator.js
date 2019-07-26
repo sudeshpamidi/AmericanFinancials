@@ -32,8 +32,8 @@ window.onload = function() {
         let totalearned = futureamount - diposit;
 
         results.style.display = "block";
-        results.innerHTML = "<strong>Fure Amount :</strong> $" + futureamount.toFixed(2) +
-            "<br> <strong>Total Amount Earning:</strong> $" + totalearned.toFixed(2);
+        results.innerHTML = "<strong>Future Amount:</strong> $" + futureamount.toFixed(2) +
+            "<br> <strong>Interest Amount:</strong> $" + totalearned.toFixed(2);
     }
 
     //Principal Amount keyup event 
