@@ -1,0 +1,29 @@
+.jumbotron {
+    /*background-image: url(../img/gym.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center bottom;
+    color: white; */
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: right;
+}
+
+.bordered-box {
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 2px;
+    padding: 25px;
+}
+
+.result-box {
+    background-color: rgba(38, 128, 217, .2);
+    margin: 15px 0 0;
+    padding: 25px;
+    display: none;
+}
