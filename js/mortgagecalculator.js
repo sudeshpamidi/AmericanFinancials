@@ -1,0 +1,55 @@
+//Discription : This containes functions of martgage calculator
+//Author: Sudesh Pamidi
+
+"use strinct"
+
+window.onload = function() {
+
+    // get the control references
+    const principalamt = document.getElementById("principal");
+    const interestrate = document.getElementById("interestrate");
+    const loanlength = document.getElementById("loanlength");
+    const calculate = document.getElementById("calculate");
+    const results = document.getElementById("results");
+    const reset = document.getElementById("reset");
+
+
+    //Calculate button event
+    calculate.onclick = function() {
+
+        let amount = principalamt.value;
+        let term = loanlength.value * 12;
+        let apr = interestrate.value / 1200;
+
+        let mpayment = calculatepayment(amount, term, apr);
+        let totalamount = mpayment * term
+
+        results.style.display = "block";
+        results.innerHTML = "<strong>Monthly Payment:</strong> $" + mpayment.toFixed(2) +
+            "<br> <strong>Total Coast:</strong> $" + totalamount.toFixed(2);
+    }
+
+    //Principal Amount keyup event 
+    principalamt.onkeyup = clearresults;
+
+    //interest rate keyup event
+    interestrate.onkeyup = clearresults;
+
+    //number of years  keyup event
+    loanlength.onkeyup = clearresults;
+
+    reset.onclick = clearresults;
+
+    //Clear the results
+    function clearresults() {
+        //results.style.display = "mone"; 
+        document.getElementById("results").style.display = "none";
+        results.innerHTML = "";
+    };
+}
+
+//Calculate the amount
+function calculatepayment(amount, term, apr) {
+    var payment = amount * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
+    return payment;
+};
