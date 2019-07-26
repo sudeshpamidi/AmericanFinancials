@@ -27,8 +27,8 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                              Calculator
-                                            </a>
+                              Calculator
+                            </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="mortgagecalculator.html">Mortgage Calculator</a>
                             <a class="dropdown-item" href="futurevaluecalculator.html">Future Value Calculator</a>
@@ -46,8 +46,8 @@
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
             <div class="container text-center">
-                <h1>Mortgage Calculator</h1>
-                <p class="lead"> Calculate Mortgage Payments <span>                    
+                <h1>Future Value Calculator</h1>
+                <p class="lead"> Calculate Future Value <span>                    
                     </span></p>
             </div>
         </div>
@@ -58,11 +58,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 offset-md-4">
-                    <form class="bordered-box mb-2" id="frmmartgage" action="#" method="GET" onsubmit="event.preventDefault();">
+                    <!-- prevent submit -->
+                    <form class="bordered-box mb-2" id="frmfuture" action="#" method="GET" onsubmit="event.preventDefault();">
                         <div class="form-group row">
-                            <label for="principal" class="col-sm-6 col-form-label">Principal Amount ($):</label>
+                            <label for="dipositamount" class="col-sm-6 col-form-label">Deposit Amount ($):</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="principal" name="principal" placeholder="Principal Amount">
+                                <input type="text" class="form-control" id="dipositamount" name="dipositamount" placeholder="Deposit Amount">
                             </div>
                         </div>
                         <!--<div id="data-error" class="form-text input-error">Must be a number</div> -->
@@ -74,9 +75,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="loanlength" class="col-sm-6 col-form-label">Number of Years (#):</label>
+                            <label for="numyears" class="col-sm-6 col-form-label">Number of Years (#):</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="loanlength" name="loanlength" placeholder="Number of Years">
+                                <input type="text" class="form-control" id="numyears" name="numyears" placeholder="Number of Years">
                             </div>
                         </div>
 
@@ -93,9 +94,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </main>
 
     <!-- Begining of footer -->
@@ -109,7 +107,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/mortgagecalculator.js"></script>
+    <script src="js/futurevaluecalculator.js"></script>
 
 </body>
 

@@ -35,6 +35,7 @@
                             <a class="dropdown-item" href="presentvaluecalculator.html">Present Value Calculator</a>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -46,8 +47,8 @@
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
             <div class="container text-center">
-                <h1>Mortgage Calculator</h1>
-                <p class="lead"> Calculate Mortgage Payments <span>                    
+                <h1>Present Value Calculator</h1>
+                <p class="lead"> Calculate Present Value <span>                    
                     </span></p>
             </div>
         </div>
@@ -60,9 +61,9 @@
                 <div class="col-md-4 offset-md-4">
                     <form class="bordered-box mb-2" id="frmmartgage" action="#" method="GET" onsubmit="event.preventDefault();">
                         <div class="form-group row">
-                            <label for="principal" class="col-sm-6 col-form-label">Principal Amount ($):</label>
+                            <label for="principal" class="col-sm-6 col-form-label">Payout Amount ($):</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="principal" name="principal" placeholder="Principal Amount">
+                                <input type="text" class="form-control" id="principal" name="principal" placeholder="Payout Amount">
                             </div>
                         </div>
                         <!--<div id="data-error" class="form-text input-error">Must be a number</div> -->
@@ -87,15 +88,12 @@
                             </div>
                         </div>
                     </form>
-                    <div class="result-box text-xl" id="results">
+                    <div class="result-box text-xl text-center" id="results">
                     </div>
 
                 </div>
             </div>
         </div>
-
-
-
     </main>
 
     <!-- Begining of footer -->
@@ -109,7 +107,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/mortgagecalculator.js"></script>
+    <script src="js/presentvaluecalculator.js"></script>
 
 </body>
 

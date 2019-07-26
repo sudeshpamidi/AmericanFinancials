@@ -18,15 +18,14 @@ window.onload = function() {
     calculate.onclick = function() {
 
         let amount = principalamt.value;
-        let term = loanlength.value * 12;
-        let apr = interestrate.value / 1200;
+        let term = loanlength.value /* * 12;*/
+        let apr = interestrate.value / 100;
 
-        let mpayment = calculatepayment(amount, term, apr);
-        let totalamount = mpayment * term
+        let presendvalue = calculatepayment(amount, term, apr);
+        //let totalamount = mpayment * term
 
         results.style.display = "block";
-        results.innerHTML = "<strong>Monthly Payment:</strong> $" + mpayment.toFixed(2) +
-            "<br> <strong>Total Cost:</strong> $" + totalamount.toFixed(2);
+        results.innerHTML = "<strong>Present value:</strong> $" + presendvalue.toFixed(2);
     }
 
     //Principal Amount keyup event 
@@ -38,19 +37,22 @@ window.onload = function() {
     //number of years  keyup event
     loanlength.onkeyup = clearresults;
 
+    //reset button 
     reset.onclick = clearresults;
+
 
     //Clear the results
     function clearresults() {
-        //results.style.display = "mone"; 
         document.getElementById("results").style.display = "none";
         results.innerHTML = "";
     };
 }
 
-//Calculate the amount
-function calculatepayment(amount, term, apr) {
+//Calculate the present value
+function calculatepayment(payout, term, apr) {
 
-    var payment = amount * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
-    return payment;
+    var factor = (apr == 0 ? term : (1 - Math.pow(1 + apr, -term)) / apr);
+    var presendvalue = payout * factor;
+
+    return presendvalue;
 };
