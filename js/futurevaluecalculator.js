@@ -1,4 +1,4 @@
-//Discription : This containes functions of martgage calculator
+//Discription : This containes functions of future value calculator
 //Author: Sudesh Pamidi
 
 "use strinct"
@@ -6,9 +6,10 @@
 window.onload = function() {
 
     // get the control references
-    const principalamt = document.getElementById("principal");
+    const dipositamount = document.getElementById("dipositamount");
     const interestrate = document.getElementById("interestrate");
-    const loanlength = document.getElementById("loanlength");
+    const numyears = document.getElementById("numyears");
+
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
     const reset = document.getElementById("reset");
@@ -16,27 +17,26 @@ window.onload = function() {
 
     //Calculate button event
     calculate.onclick = function() {
-
-        let amount = principalamt.value;
-        let term = loanlength.value * 12;
+        let diposit = dipositamount.value;
+        let term = numyears.value * 12
         let apr = interestrate.value / 1200;
 
-        let mpayment = calculatepayment(amount, term, apr);
-        let totalamount = mpayment * term
+        let futureamount = calculatefuturevalue(diposit, term, apr);
+        let totalearned = futureamount - diposit;
 
         results.style.display = "block";
-        results.innerHTML = "<strong>Monthly Payment:</strong> $" + mpayment.toFixed(2) +
-            "<br> <strong>Total Cost:</strong> $" + totalamount.toFixed(2);
+        results.innerHTML = "<strong>Fure Amount :</strong> $" + futureamount.toFixed(2) +
+            "<br> <strong>Total Amount Earning:</strong> $" + totalearned.toFixed(2);
     }
 
     //Principal Amount keyup event 
-    principalamt.onkeyup = clearresults;
+    dipositamount.onkeyup = clearresults;
 
     //interest rate keyup event
     interestrate.onkeyup = clearresults;
 
     //number of years  keyup event
-    loanlength.onkeyup = clearresults;
+    numyears.onkeyup = clearresults;
 
     reset.onclick = clearresults;
 
@@ -49,8 +49,7 @@ window.onload = function() {
 }
 
 //Calculate the amount
-function calculatepayment(amount, term, apr) {
-
-    var payment = amount * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
-    return payment;
+function calculatefuturevalue(diposit, term, apr) {
+    var futureamount = diposit * Math.pow((1 + apr), term);
+    return futureamount;
 };
