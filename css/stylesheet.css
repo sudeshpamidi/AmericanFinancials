@@ -1,9 +1,9 @@
 .jumbotron {
-    background-image: url(../img/consulting.jpg);
+    background-image: url(../img/financial-zumbo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center bottom;
-    color: white;
+    background-position: center top;
+    color: goldenrod;
     text-align: center;
 }
 
@@ -32,7 +32,13 @@ footer {
     color: red;
 }
 
-.image {
-    width: 200px;
-    height: 200px;
+.image-md {
+    width: 140px;
+    height: 140px;
+}
+
+.image-sm {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
 }
