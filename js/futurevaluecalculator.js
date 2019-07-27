@@ -1,7 +1,7 @@
 //Discription : This containes functions of future value calculator
 //Author: Sudesh Pamidi
 
-"use strinct"
+"use strict"
 
 window.onload = function() {
 
