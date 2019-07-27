@@ -8,7 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/stylesheet.css">
     <title>American Financials</title>
 </head>
 
@@ -22,17 +23,20 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <div class="ml-auto">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Calculators
-                                    </a>
+                            Calculators
+                        </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="mortgagecalculator.html">Mortgage Calculator</a>
-                            <a class="dropdown-item" href="futurevaluecalculator.html">Future Value Calculator</a>
-                            <a class="dropdown-item" href="presentvaluecalculator.html">Present Value Calculator</a>
+                            <a class="dropdown-item" href="mortgagecalculator.html"><i class="fas fa-home"></i> Mortgage
+                            </a>
+                            <a class="dropdown-item" href="futurevaluecalculator.html"><i
+                                    class="fas fa-hand-holding-usd"></i> Future Value </a>
+                            <a class="dropdown-item" href="presentvaluecalculator.html"><i
+                                    class="fas fa-calculator"></i> Present Value </a>
                         </div>
                     </li>
 
@@ -48,7 +52,7 @@
         <div class="jumbotron">
             <div class="container text-center">
                 <h1>American Financials</h1>
-                <p class="lead"> Calculate Mortgage Payments, Interest & more <span>                    
+                <p class="lead"> Calculate Mortgage Payments, Interest & more <span>
                     </span></p>
             </div>
         </div>
@@ -56,47 +60,41 @@
     <!--End header -->
     <main>
         <div class="container-fluid">
-            <!-- Figure images row1 row2 -->
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="text-center">
-                        <figure class="figure image">
-                            <img src="img/savings.jpg" class="figure-img img-fluid rounded" alt="saving">
-                            <figcaption class="figure-caption text-right">Mortgage Calculator</figcaption>
-                        </figure>
-                        <h2>Mortgage Calculator</h2>
-                        <p>From mortgages to retirement plans, our calculators allow you to estimate the value of a loan or deposit from just about every financial product you might need. We factor in such variables as interest, fees, and taxes to help you
-                            decide whether to invest in a new savings account, take out new debt, or purchase a new car or home.</p>
-                        <p><a class="btn text-white btn-success" href="mortgagecalculator.html" role="button">Mortgage Calculator</a></p>
+                        <img src="img/mortgage.jpg" class="bd-placeholder-img rounded-circle image-md" alt="saving">
                     </div>
+                    <h2>Mortgage Calculator</h2>
+                    <p>From mortgages to retirement plans, our calculators allow you to estimate the value of a loan or deposit from just about every financial product you might need. We factor in such variables as interest, fees, and taxes to help you decide
+                        whether to invest in a new savings account.</p>
+                    <p><a class="btn text-white btn-success" href="mortgagecalculator.html" role="button">Mortgage
+                            Calculator</a></p>
                 </div>
-                <div class="col-md-4">
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
                     <div class="text-center">
-                        <figure class="figure image">
-                            <img src="img/future.jpg" class="figure-img img-fluid rounded" alt="future">
-                            <figcaption class="figure-caption text-right">Future Calculator</figcaption>
-                        </figure>
-                        <h2>Future Calculator</h2>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
-                            dui. </p>
-                        <p><a class="btn text-white btn-success" href="futurevaluecalculator.html" role="button">Futur Value Calculator</a></p>
+                        <img src="img/increase.jpg" class="bd-placeholder-img rounded-circle image-md" alt="saving">
                     </div>
+                    <h2>Future Value Calculator</h2>
+                    <p>The future value calculator normally calculates a nominal future value. This means the calculated future value is the result of an investment gain or from interest earned on the money. A nominal future value does not account for inflation.</p>
+                    <p><a class="btn text-white btn-success" href="futurevaluecalculator.html" role="button">Future
+                            Value Calculator</a></p>
                 </div>
-                <div class="col-md-4">
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4">
                     <div class="text-center">
-                        <figure class="figure image">
-                            <img src="img/presentvalue.jpg" class="figure-img img-fluid rounded" alt="present">
-                            <figcaption class="figure-caption text-right">Present Value Calculator</figcaption>
-                        </figure>
-                        <h2>Present Value Calculator</h2>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
-                            dui. </p>
-                        <p><a class="btn text-white btn-success" href="presentvaluecalculator.html" role="button">Present Value Calculator</a></p>
+                        <img src="img/saving1.jpg" class="image-md bd-placeholder-img rounded-circle " alt="saving">
                     </div>
+                    <h2>Present Value Calculator</h2>
+                    <p>Present value (PV) is the current value of a future sum of money or stream of cash flows given a specified rate of return. Future cash flows are discounted at the discount rate, and the higher the discount rate, the lower the present
+                        value of the future cash flows. </p>
+                    <p><a class="btn text-white btn-success" href="presentvaluecalculator.html" role="button">Present
+                            Value Calculator</a></p>
                 </div>
-
+                <!-- /.col-lg-4 -->
             </div>
-            <!-- End of Figure images row1 row2 -->
+            <!-- end of row -->
 
         </div>
     </main>
