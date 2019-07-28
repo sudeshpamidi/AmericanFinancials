@@ -13,7 +13,6 @@ window.onload = function() {
     const results = document.getElementById("results");
     const reset = document.getElementById("reset");
 
-
     //Calculate button event
     calculate.onclick = function() {
 
@@ -28,10 +27,9 @@ window.onload = function() {
             return;
         }
 
-
         let presendvalue = calculatepayment(amount, term, apr);
-        //let totalamount = mpayment * term
 
+        //Display the results
         results.style.display = "block";
         results.innerHTML = "<strong>Present value:</strong> $" + presendvalue.toFixed(2);
     }

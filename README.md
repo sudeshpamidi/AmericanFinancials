@@ -12,6 +12,7 @@ AmericanFinancials.com is a cloud-enabled, mobile-ready, offline-storage, Angula
 # New Features!
 
   - Martgage Calculator.
+  - Future value calculator.
   - Present Value of Annuity Calculator..etc
 
 
@@ -38,7 +39,7 @@ AmericanFinancials  uses a number of open source projects to work properly:
 
 * [Font Awesome] - awesome web-based text editor
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [jQuery]  and Javascripts.
+* [Javascripts].
 
-And of course AmericanFinancials itself is open source with a [public repository][dill]
+And of course AmericanFinancials itself is open source with a [public repository]
  on GitHub.

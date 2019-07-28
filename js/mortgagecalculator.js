@@ -13,7 +13,6 @@ window.onload = function() {
     const results = document.getElementById("results");
     const reset = document.getElementById("reset");
 
-
     //Calculate button event
     calculate.onclick = function() {
 
@@ -27,7 +26,6 @@ window.onload = function() {
             return;
         }
 
-
         let mpayment = calculatepayment(amount, term, apr);
 
         if (isNaN(mpayment))
@@ -35,6 +33,7 @@ window.onload = function() {
 
         let totalamount = mpayment * term
 
+        //Display the results
         results.style.display = "block";
         results.innerHTML = "<strong>Monthly Payment:</strong> $" + mpayment.toFixed(2) +
             "<br> <strong>Total Cost:</strong> $" + totalamount.toFixed(2);
@@ -49,6 +48,7 @@ window.onload = function() {
     //number of years  keyup event
     loanlength.onkeyup = clearresults;
 
+    //reset button onlclick
     reset.onclick = clearresults;
 
     //Clear the results
@@ -61,7 +61,6 @@ window.onload = function() {
 
 //Calculate the amount
 function calculatepayment(amount, term, apr) {
-
     var payment = amount * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
     return payment;
 };
