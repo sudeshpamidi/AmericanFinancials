@@ -9,7 +9,6 @@ window.onload = function() {
     const dipositamount = document.getElementById("dipositamount");
     const interestrate = document.getElementById("interestrate");
     const numyears = document.getElementById("numyears");
-
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
     const reset = document.getElementById("reset");
@@ -31,6 +30,7 @@ window.onload = function() {
         let futureamount = calculatefuturevalue(diposit, term, apr);
         let totalearned = futureamount - diposit;
 
+        //Displaying the results
         results.style.display = "block";
         results.innerHTML = "<strong>Future Amount:</strong> $" + futureamount.toFixed(2) +
             "<br> <strong>Interest Amount:</strong> $" + totalearned.toFixed(2);
@@ -45,6 +45,7 @@ window.onload = function() {
     //number of years  keyup event
     numyears.onkeyup = clearresults;
 
+    //reset button onclick event binding
     reset.onclick = clearresults;
 
     //Clear the results
