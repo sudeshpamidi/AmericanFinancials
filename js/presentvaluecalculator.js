@@ -12,6 +12,7 @@ window.onload = function() {
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
     const reset = document.getElementById("reset");
+    const frmpresent = document.getElementById("frmpresent");
 
     //Calculate button event
     calculate.onclick = function() {
@@ -46,11 +47,18 @@ window.onload = function() {
     //reset button 
     reset.onclick = clearresults;
 
+    //form onsubmit event
+    frmpresent.onsubmit = preventSubmit;
 
     //Clear the results
     function clearresults() {
         document.getElementById("results").style.display = "none";
         results.innerHTML = "";
+    };
+
+    //Preventing default behaveour of submitting
+    function preventSubmit() {
+        event.preventDefault();
     };
 }
 
