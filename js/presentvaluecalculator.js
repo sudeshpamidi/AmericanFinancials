@@ -7,8 +7,8 @@ window.onload = function() {
 
     // get the control references
     const principalamt = document.getElementById("principal");
-    const interestrate = document.getElementById("interestrate");
-    const loanlength = document.getElementById("loanlength");
+    const interestRate = document.getElementById("interestRate");
+    const loanLength = document.getElementById("loanLength");
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
     const reset = document.getElementById("reset");
@@ -18,40 +18,40 @@ window.onload = function() {
     calculate.onclick = function() {
 
         let amount = Number(principalamt.value);
-        let term = Number(loanlength.value);
-        let apr = interestrate.value / 100;
+        let term = Number(loanLength.value);
+        let apr = interestRate.value / 100;
 
-        if (isNaN(amount) || isNaN(term) || isNaN(apr)) {
+        if (isNaN(amount) || isNaN(term) || isNaN(apr) || Number(amount) < 0 || Number(term) < 0 || Number(apr) < 0) {
 
             results.style.display = "block";
-            results.innerHTML = "<p class='error'>One or more input fields are not number(s).</p>";
+            results.innerHTML = "<p class='error'>One or more fields are either negative or not number(s). The input fields shoul be positive numbers.</p>";
             return;
         }
 
-        let presendvalue = calculatepayment(amount, term, apr);
+        let presentValue = calculatePayment(amount, term, apr);
 
         //Display the results
         results.style.display = "block";
-        results.innerHTML = "<strong>Present value:</strong> $" + presendvalue.toFixed(2);
+        results.innerHTML = "<strong>Present value:</strong> $" + presentValue.toFixed(2);
     }
 
     //Principal Amount keyup event 
-    principalamt.onkeyup = clearresults;
+    principalamt.onkeyup = clearResults;
 
     //interest rate keyup event
-    interestrate.onkeyup = clearresults;
+    interestRate.onkeyup = clearResults;
 
     //number of years  keyup event
-    loanlength.onkeyup = clearresults;
+    loanLength.onkeyup = clearResults;
 
     //reset button 
-    reset.onclick = clearresults;
+    reset.onclick = clearResults;
 
     //form onsubmit event
     frmpresent.onsubmit = preventSubmit;
 
     //Clear the results
-    function clearresults() {
+    function clearResults() {
         document.getElementById("results").style.display = "none";
         results.innerHTML = "";
     };
@@ -62,11 +62,14 @@ window.onload = function() {
     };
 }
 
-//Calculate the present value
-function calculatepayment(payout, term, apr) {
+//This function calculate the present value of payout and the interest rate and term of the loan.
+//@parem  payout(Number) -- The amount of the payout
+//@parem  term(Number) -- Number of years 
+//@parem  apr(Number) -- The interest rate
+function calculatePayment(payout, term, apr) {
 
     var factor = (apr == 0 ? term : (1 - Math.pow(1 + apr, -term)) / apr);
-    var presendvalue = payout * factor;
+    var presentValue = payout * factor;
 
-    return presendvalue;
+    return presentValue;
 };
