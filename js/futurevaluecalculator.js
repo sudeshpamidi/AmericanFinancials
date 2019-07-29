@@ -6,19 +6,19 @@
 window.onload = function() {
 
     // get the control references
-    const dipositamount = document.getElementById("dipositamount");
-    const interestrate = document.getElementById("interestrate");
-    const numyears = document.getElementById("numyears");
+    const dipositAmount = document.getElementById("dipositAmount");
+    const interestRate = document.getElementById("interestRate");
+    const numYears = document.getElementById("numYears");
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
     const reset = document.getElementById("reset");
-    const frmfuture = document.getElementById("frmfuture");
+    const frmFuture = document.getElementById("frmFuture");
 
     //Calculate button event
     calculate.onclick = function() {
-        let diposit = dipositamount.value;
-        let term = numyears.value * 12
-        let apr = interestrate.value / 1200;
+        let diposit = dipositAmount.value;
+        let term = numYears.value * 12
+        let apr = interestRate.value / 1200;
 
         if (isNaN(diposit) || isNaN(term) || isNaN(apr)) {
 
@@ -27,7 +27,7 @@ window.onload = function() {
             return;
         }
 
-        let futureamount = calculatefuturevalue(diposit, term, apr);
+        let futureamount = calculateFutureValue(diposit, term, apr);
         let totalearned = futureamount - diposit;
 
         //Displaying the results
@@ -37,21 +37,22 @@ window.onload = function() {
     }
 
     //Principal Amount keyup event 
-    dipositamount.onkeyup = clearresults;
+    dipositAmount.onkeyup = clearResults;
 
     //interest rate keyup event
-    interestrate.onkeyup = clearresults;
+    interestRate.onkeyup = clearResults;
 
     //number of years  keyup event
-    numyears.onkeyup = clearresults;
+    numYears.onkeyup = clearResults;
 
     //reset button onclick event binding
-    reset.onclick = clearresults;
+    reset.onclick = clearResults;
 
-    frmfuture.onsubmit = preventSubmit;
+    // handling the onsubmit event to prevent submit
+    frmFuture.onsubmit = preventSubmit;
 
     //Clear the results
-    function clearresults() {
+    function clearResults() {
         //results.style.display = "mone"; 
         document.getElementById("results").style.display = "none";
         results.innerHTML = "";
@@ -61,12 +62,13 @@ window.onload = function() {
     function preventSubmit() {
         event.preventDefault();
     };
-
-
 }
 
-//Calculate the amount
-function calculatefuturevalue(diposit, term, apr) {
-    var futureamount = diposit * Math.pow((1 + apr), term);
+//This function calculate the future value of time deposit assumming the compound interest
+//@parem  deposit(Number) -- The amount of the deposit 
+//@parem  term(Number) -- Number of years 
+//@parem  apr(Number) -- The interest rate
+function calculateFutureValue(deposit, term, apr) {
+    var futureamount = deposit * Math.pow((1 + apr), term);
     return futureamount;
 };
