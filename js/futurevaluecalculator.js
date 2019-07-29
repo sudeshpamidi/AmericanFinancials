@@ -12,7 +12,7 @@ window.onload = function() {
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
     const reset = document.getElementById("reset");
-
+    const frmfuture = document.getElementById("frmfuture");
 
     //Calculate button event
     calculate.onclick = function() {
@@ -48,12 +48,21 @@ window.onload = function() {
     //reset button onclick event binding
     reset.onclick = clearresults;
 
+    frmfuture.onsubmit = preventSubmit;
+
     //Clear the results
     function clearresults() {
         //results.style.display = "mone"; 
         document.getElementById("results").style.display = "none";
         results.innerHTML = "";
     };
+
+    //Preventing default behaveour of submitting
+    function preventSubmit() {
+        event.preventDefault();
+    };
+
+
 }
 
 //Calculate the amount

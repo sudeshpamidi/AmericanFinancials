@@ -12,6 +12,7 @@ window.onload = function() {
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
     const reset = document.getElementById("reset");
+    const frmmartgage = document.getElementById("frmmartgage");
 
     //Calculate button event
     calculate.onclick = function() {
@@ -51,11 +52,19 @@ window.onload = function() {
     //reset button onlclick
     reset.onclick = clearresults;
 
+    //frmmartgage event to prevent on submit
+    frmmartgage.onsubmit = preventSubmit;
+
     //Clear the results
     function clearresults() {
         //results.style.display = "mone"; 
         document.getElementById("results").style.display = "none";
         results.innerHTML = "";
+    };
+
+    //Preventing default behaveour of submitting
+    function preventSubmit() {
+        event.preventDefault();
     };
 }
 
