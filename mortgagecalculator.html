@@ -62,7 +62,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 offset-md-4">
-                    <form class="bordered-box mb-2" id="frmmartgage" action="#" method="GET">
+                    <form class="bordered-box mb-2" id="frmMortgage" action="#" method="GET">
                         <div class="row">
                             <div class="col-sm-12">
                                 <h2>Mortgage Calculator</h2>
@@ -81,15 +81,15 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="interestrate" class="col-sm-6 col-form-label">Interest Rate (%):</label>
+                            <label for="interestRate" class="col-sm-6 col-form-label">Interest Rate (%):</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="interestrate" name="interestrate" placeholder="Interest Rate">
+                                <input type="text" class="form-control" id="interestRate" name="interestRate" placeholder="Interest Rate">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="loanlength" class="col-sm-6 col-form-label">Number of Years (#):</label>
+                            <label for="loanLength" class="col-sm-6 col-form-label">Number of Years (#):</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="loanlength" name="loanlength" placeholder="Number of Years">
+                                <input type="text" class="form-control" id="loanLength" name="loanLength" placeholder="Number of Years">
                             </div>
                         </div>
 
@@ -100,6 +100,7 @@
                             </div>
                         </div>
                     </form>
+                    <div class="alert alert-danger" id="alert"></div>
                     <div class="result-box text-xl" id="results">
                     </div>
 

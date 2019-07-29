@@ -20,10 +20,10 @@ window.onload = function() {
         let term = numYears.value * 12
         let apr = interestRate.value / 1200;
 
-        if (isNaN(diposit) || isNaN(term) || isNaN(apr)) {
+        if (isNaN(diposit) || isNaN(term) || isNaN(apr) || Number(diposit) < 0 || Number(term) < 0 || Number(apr) < 0) {
 
             results.style.display = "block";
-            results.innerHTML = "<p class='error'>One or more input fields are not number(s).</p>";
+            results.innerHTML = "<p class='error'>One or more fields are either negative or not number(s). The input fields shoul be positive numbers.</p>";
             return;
         }
 

@@ -7,58 +7,60 @@ window.onload = function() {
 
     // get the control references
     const principalamt = document.getElementById("principal");
-    const interestrate = document.getElementById("interestrate");
-    const loanlength = document.getElementById("loanlength");
+    const interestRate = document.getElementById("interestRate");
+    const loanLength = document.getElementById("loanLength");
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
+    const alert = document.getElementById("alert");
     const reset = document.getElementById("reset");
-    const frmmartgage = document.getElementById("frmmartgage");
+    const frmMortgage = document.getElementById("frmMortgage");
 
     //Calculate button event
     calculate.onclick = function() {
 
         let amount = Number(principalamt.value);
-        let term = loanlength.value * 12;
-        let apr = interestrate.value / 1200;
+        let term = loanLength.value * 12;
+        let apr = interestRate.value / 1200;
 
-        if (isNaN(amount) || isNaN(term) || isNaN(apr)) {
-            results.style.display = "block";
-            results.innerHTML = "<p class='error'>One or more input fields are not number(s).</p>";
+        if (isNaN(amount) || isNaN(term) || isNaN(apr) || Number(amount) < 0 || Number(term) < 0 || Number(apr) < 0) {
+            alert.style.display = "block";
+            alert.innerText = "One or more fields are either negative or not number(s). The input fields shoul be positive numbers.";
             return;
         }
 
-        let mpayment = calculatepayment(amount, term, apr);
+        let mPayment = calculatePayment(amount, term, apr);
 
-        if (isNaN(mpayment))
-            mpayment = 0;
+        if (isNaN(mPayment))
+            mPayment = 0;
 
-        let totalamount = mpayment * term
+        let totalamount = mPayment * term
 
         //Display the results
         results.style.display = "block";
-        results.innerHTML = "<strong>Monthly Payment:</strong> $" + mpayment.toFixed(2) +
+        results.innerHTML = "<strong>Monthly Payment:</strong> $" + mPayment.toFixed(2) +
             "<br> <strong>Total Cost:</strong> $" + totalamount.toFixed(2);
     }
 
     //Principal Amount keyup event 
-    principalamt.onkeyup = clearresults;
+    principalamt.onkeyup = clearResults;
 
     //interest rate keyup event
-    interestrate.onkeyup = clearresults;
+    interestRate.onkeyup = clearResults;
 
     //number of years  keyup event
-    loanlength.onkeyup = clearresults;
+    loanLength.onkeyup = clearResults;
 
     //reset button onlclick
-    reset.onclick = clearresults;
+    reset.onclick = clearResults;
 
-    //frmmartgage event to prevent on submit
-    frmmartgage.onsubmit = preventSubmit;
+    //frmMortgage event to prevent on submit
+    frmMortgage.onsubmit = preventSubmit;
 
     //Clear the results
-    function clearresults() {
+    function clearResults() {
         //results.style.display = "mone"; 
         document.getElementById("results").style.display = "none";
+        document.getElementById("alert").style.display = "none";
         results.innerHTML = "";
     };
 
@@ -68,8 +70,11 @@ window.onload = function() {
     };
 }
 
-//Calculate the amount
-function calculatepayment(amount, term, apr) {
+//This function calculate the mortgage value of loan amount deposit and the interest rate and term of the loan.
+//@parem  amount(Number) -- The amount of the deposit 
+//@parem  term(Number) -- Number of years 
+//@parem  apr(Number) -- The interest rate
+function calculatePayment(amount, term, apr) {
     var payment = amount * (apr * Math.pow((1 + apr), term)) / (Math.pow((1 + apr), term) - 1);
     return payment;
 };

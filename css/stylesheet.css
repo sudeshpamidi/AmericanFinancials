@@ -28,6 +28,10 @@ footer {
     display: none;
 }
 
+.alert {
+    display: none;
+}
+
 .error {
     color: red;
 }
