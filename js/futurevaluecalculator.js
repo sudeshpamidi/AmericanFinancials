@@ -11,6 +11,7 @@ window.onload = function() {
     const numYears = document.getElementById("numYears");
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
+    const alert = document.getElementById("alert");
     const reset = document.getElementById("reset");
     const frmFuture = document.getElementById("frmFuture");
 
@@ -22,8 +23,8 @@ window.onload = function() {
 
         if (isNaN(diposit) || isNaN(term) || isNaN(apr) || Number(diposit) < 0 || Number(term) < 0 || Number(apr) < 0) {
 
-            results.style.display = "block";
-            results.innerHTML = "<p class='error'>One or more fields are either negative or not number(s). The input fields shoul be positive numbers.</p>";
+            alert.style.display = "block";
+            alert.innerText = "One or more fields are either negative or not number(s). The input fields shoul be positive numbers.";
             return;
         }
 
@@ -55,6 +56,7 @@ window.onload = function() {
     function clearResults() {
         //results.style.display = "mone"; 
         document.getElementById("results").style.display = "none";
+        document.getElementById("alert").style.display = "none";
         results.innerHTML = "";
     };
 

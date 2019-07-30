@@ -11,6 +11,7 @@ window.onload = function() {
     const loanLength = document.getElementById("loanLength");
     const calculate = document.getElementById("calculate");
     const results = document.getElementById("results");
+    const alert = document.getElementById("alert");
     const reset = document.getElementById("reset");
     const frmpresent = document.getElementById("frmpresent");
 
@@ -22,9 +23,8 @@ window.onload = function() {
         let apr = interestRate.value / 100;
 
         if (isNaN(amount) || isNaN(term) || isNaN(apr) || Number(amount) < 0 || Number(term) < 0 || Number(apr) < 0) {
-
-            results.style.display = "block";
-            results.innerHTML = "<p class='error'>One or more fields are either negative or not number(s). The input fields shoul be positive numbers.</p>";
+            alert.style.display = "block";
+            alert.innerText = "One or more fields are either negative or not number(s). The input fields shoul be positive numbers.";
             return;
         }
 
@@ -53,6 +53,7 @@ window.onload = function() {
     //Clear the results
     function clearResults() {
         document.getElementById("results").style.display = "none";
+        document.getElementById("alert").style.display = "none";
         results.innerHTML = "";
     };
 
